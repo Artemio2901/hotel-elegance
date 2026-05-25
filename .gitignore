@@ -1,0 +1,10 @@
+# Ignorar dependencias pesadas de Node.js
+server/node_modules/
+
+# Ignorar credenciales y variables de entorno sensibles (¡MUY IMPORTANTE!)
+server/.env
+
+# Ignorar archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini

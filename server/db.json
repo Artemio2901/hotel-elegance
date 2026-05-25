@@ -1,0 +1,173 @@
+{
+  "users": [
+    {
+      "id": "admin-1",
+      "fullname": "Administrador",
+      "email": "admin@hotelelegance.com",
+      "username": "admin",
+      "passwordHash": "$2a$10$brQHDgYXgFNOSe6/i7KKm.gwi8G2t8ar9tqyraRRmtkDRw2xJTdBq",
+      "role": "admin",
+      "createdAt": "2026-03-08T08:35:59.077Z"
+    },
+    {
+      "id": "demo-user-1",
+      "fullname": "Usuario Demo",
+      "email": "demo@hotelelegance.com",
+      "username": "usuario",
+      "passwordHash": "$2a$10$MgwudiGKUvyCJAYEmX/AveghbGQZzMwXo54HZTdqaBbl1vAyGbfBC",
+      "role": "user",
+      "createdAt": "2026-03-08T08:35:59.153Z"
+    },
+    {
+      "id": "bba4879d-f2ab-4f87-8a02-3a38a73e0505",
+      "fullname": "Artemio",
+      "email": "arte.iotenorio@gmail.com",
+      "username": "Artemio",
+      "passwordHash": "$2a$10$pMwKF1gnBS8t9Z4DvxdLYe8YnTi6woHuyywwiukn1VAFbeMoAs2Yq",
+      "role": "user",
+      "createdAt": "2026-03-10T02:35:36.692Z"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "suite-lujo",
+      "title": "Suite de Lujo",
+      "price": 350,
+      "icon": "🛏️",
+      "badge": "Popular",
+      "features": [
+        "King Size",
+        "2-3 Personas",
+        "65 m²",
+        "Vista al Mar"
+      ],
+      "description": "Espaciosa suite con vista panorámica, jacuzzi privado y sala de estar elegante.",
+      "available": true
+    },
+    {
+      "id": "deluxe",
+      "title": "Habitación Deluxe",
+      "price": 200,
+      "icon": "🛏️",
+      "badge": null,
+      "features": [
+        "Queen Size",
+        "2 Personas",
+        "40 m²",
+        "Vista Ciudad"
+      ],
+      "description": "Habitación moderna con todas las comodidades y diseño contemporáneo.",
+      "available": true
+    },
+    {
+      "id": "estandar",
+      "title": "Habitación Estándar",
+      "price": 120,
+      "icon": "🛏️",
+      "badge": "Oferta",
+      "features": [
+        "Full Size",
+        "1-2 Personas",
+        "30 m²",
+        "Vista Jardín"
+      ],
+      "description": "Confortable y acogedora, perfecta para estancias cortas con todo lo necesario.",
+      "available": true
+    }
+  ],
+  "offers": [
+    {
+      "id": "romantica",
+      "title": "Escapada Romántica",
+      "badge": "-30%",
+      "icon": "💑",
+      "description": "La escapada perfecta para parejas que buscan una experiencia íntima e inolvidable.",
+      "includes": [
+        "2 noches en Suite de Lujo",
+        "Cena romántica con vista al mar",
+        "Spa para parejas (2 horas)",
+        "Botella de champagne de bienvenida",
+        "Arreglo floral en la habitación"
+      ],
+      "oldPrice": 700,
+      "newPrice": 490,
+      "validity": "Válido todos los fines de semana del año"
+    },
+    {
+      "id": "prolongada",
+      "title": "Estadía Prolongada",
+      "badge": "-20%",
+      "icon": "📅",
+      "description": "Aprovecha el mejor precio cuando te quedas 5 noches o más.",
+      "includes": [
+        "5 noches o más en habitación elegida",
+        "Desayuno buffet incluido diariamente",
+        "Lavandería gratuita (2 piezas/día)",
+        "Acceso al gimnasio y piscina",
+        "Transporte al aeropuerto (ida y vuelta)"
+      ],
+      "oldPrice": 1000,
+      "newPrice": 800,
+      "validity": "Válido para reservas de 5 noches o más"
+    },
+    {
+      "id": "wellness",
+      "title": "Experiencia Wellness",
+      "badge": "Nuevo",
+      "icon": "🧘",
+      "description": "Reconecta con tu bienestar en un retiro de lujo.",
+      "includes": [
+        "3 noches en Habitación Deluxe",
+        "Acceso ilimitado al spa",
+        "Clases de yoga matutinas",
+        "Menú saludable en restaurante",
+        "Masaje relajante de 60 min (1 sesión)"
+      ],
+      "oldPrice": null,
+      "newPrice": 650,
+      "validity": "Disponible de lunes a jueves"
+    }
+  ],
+  "reservations": [
+    {
+      "id": "RES-01452208",
+      "roomId": "estandar",
+      "roomTitle": "Habitación Estándar",
+      "roomIcon": "🛏️",
+      "checkIn": "2026-03-10",
+      "checkOut": "2026-03-11",
+      "nights": 1,
+      "guests": "1",
+      "name": "Usuario Demo",
+      "email": "demo@hotelelegance.com",
+      "special": "jhkllñ",
+      "price": 120,
+      "subtotal": 120,
+      "taxes": 14,
+      "total": 134,
+      "status": "confirmed",
+      "user": "usuario",
+      "createdAt": "2026-03-10T22:08:04.775Z"
+    },
+    {
+      "id": "RES-EBAA7FF8",
+      "roomId": "deluxe",
+      "roomTitle": "Habitación Deluxe",
+      "roomIcon": "🛏️",
+      "checkIn": "2026-03-10",
+      "checkOut": "2026-03-11",
+      "nights": 1,
+      "guests": "1",
+      "name": "Arte",
+      "email": "arte.tenorio@gmail.com",
+      "special": "una camadera pechugona",
+      "price": 200,
+      "subtotal": 200,
+      "taxes": 24,
+      "total": 224,
+      "status": "confirmed",
+      "user": "Artemio",
+      "createdAt": "2026-03-10T02:45:17.445Z"
+    }
+  ]
+}

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hotel Elegance - Reserva tu habitación en el hotel más lujoso de la ciudad">
+    <meta name="keywords" content="hotel, reservas, lujo, habitaciones, hospedaje">
+    <title>Hotel Elegance - Bienvenido</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .admin-btn {
+            background: #4f46e5;
+            color: white !important;
+            padding: 0.4rem 0.8rem !important;
+            border-radius: 4px;
+        }
+
+        .edit-res-form input {
+            border: 1px solid #ccc;
+            padding: 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Página de Login -->
+    <div id="login-page" class="page active">
+        <div class="login-container">
+            <div class="login-background"></div>
+            <div class="login-content">
+                <div class="login-card">
+                    <div class="logo-section">
+                        <h1 class="hotel-logo">Hotel Elegance</h1>
+                        <p class="hotel-tagline">Experiencia de lujo incomparable</p>
+                    </div>
+
+                    <form id="login-form" class="login-form">
+                        <h2>Iniciar Sesión</h2>
+                        <p class="form-subtitle">Bienvenido de nuevo</p>
+
+                        <div class="form-group">
+                            <label for="username">Usuario</label>
+                            <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required
+                                autocomplete="username">
+                            <span class="input-icon">👤</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña"
+                                required autocomplete="current-password">
+                            <span class="input-icon">🔒</span>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="remember-me">
+                                <span>Recordarme</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-primary" id="login-btn">
+                            Iniciar Sesión
+                        </button>
+
+                        <div class="divider">
+                            <span>o</span>
+                        </div>
+
+                        <p class="signup-text">
+                            ¿No tienes cuenta? <a href="#" class="signup-link">Regístrate aquí</a>
+                        </p>
+                    </form>
+
+                    <div class="demo-credentials">
+                        <p>🔑 Demo: <strong>usuario</strong> / <strong>password</strong></p>
+                        <p>🔑 Admin: <strong>admin</strong> / <strong>admin123</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página de Registro -->
+    <div id="register-page" class="page">
+        <div class="login-container">
+            <div class="login-background"></div>
+            <div class="login-content">
+                <div class="login-card">
+                    <div class="logo-section">
+                        <h1 class="hotel-logo">Hotel Elegance</h1>
+                        <p class="hotel-tagline">Experiencia de lujo incomparable</p>
+                    </div>
+
+                    <form id="register-form" class="login-form">
+                        <h2>Crear Cuenta</h2>
+                        <p class="form-subtitle">Únete a nuestra comunidad exclusiva</p>
+
+                        <div class="form-group">
+                            <label for="register-fullname">Nombre Completo</label>
+                            <input type="text" id="register-fullname" name="fullname"
+                                placeholder="Ingresa tu nombre completo" required autocomplete="name">
+                            <span class="input-icon">👤</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-email">Correo Electrónico</label>
+                            <input type="email" id="register-email" name="email" placeholder="tu@email.com" required
+                                autocomplete="email">
+                            <span class="input-icon">✉️</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-username">Usuario</label>
+                            <input type="text" id="register-username" name="username"
+                                placeholder="Elige un nombre de usuario" required autocomplete="username">
+                            <span class="input-icon">🆔</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-password">Contraseña</label>
+                            <input type="password" id="register-password" name="password"
+                                placeholder="Mínimo 6 caracteres" required autocomplete="new-password" minlength="6">
+                            <span class="input-icon">🔒</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-confirm-password">Confirmar Contraseña</label>
+                            <input type="password" id="register-confirm-password" name="confirm-password"
+                                placeholder="Repite tu contraseña" required autocomplete="new-password" minlength="6">
+                            <span class="input-icon">🔐</span>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="accept-terms" required>
+                                <span>Acepto los <a href="#" class="terms-link">términos y condiciones</a></span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-primary" id="register-btn">
+                            Crear Cuenta
+                        </button>
+
+                        <div class="divider">
+                            <span>o</span>
+                        </div>
+
+                        <p class="signup-text">
+                            ¿Ya tienes cuenta? <a href="#" class="login-link" id="back-to-login">Inicia sesión aquí</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página Principal (Dashboard) -->
+    <div id="dashboard-page" class="page">
+        <!-- Header/Navigation -->
+        <header class="main-header">
+            <nav class="navbar">
+                <div class="nav-container">
+                    <div class="nav-brand">
+                        <h1 class="brand-name">Hotel Elegance</h1>
+                    </div>
+
+                    <button class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <ul class="nav-menu" id="nav-menu">
+                        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                        <li><a href="#habitaciones" class="nav-link">Habitaciones</a></li>
+                        <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                        <li><a href="#ofertas" class="nav-link">Ofertas</a></li>
+                        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                        <li><button class="btn-mis-reservas" id="my-reservations-btn">🗓️ Mis Reservas</button></li>
+                        <li id="admin-btn-li" style="display: none;"><button class="admin-btn" id="admin-panel-btn">⚙️ Admin</button></li>
+                        <li><button class="btn-logout" id="logout-btn">Cerrar Sesión</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section" id="inicio">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2 class="hero-title">Bienvenido al Paraíso</h2>
+                <p class="hero-subtitle">Descubre la experiencia de hospedaje más exclusiva</p>
+
+                <!-- Booking Search -->
+                <div class="booking-widget">
+                    <div class="booking-form">
+                        <div class="form-field">
+                            <label for="check-in">Entrada</label>
+                            <input type="date" id="check-in" class="date-input">
+                        </div>
+                        <div class="form-field">
+                            <label for="check-out">Salida</label>
+                            <input type="date" id="check-out" class="date-input">
+                        </div>
+                        <div class="form-field">
+                            <label for="guests">Huéspedes</label>
+                            <select id="guests" class="select-input">
+                                <option value="1">1 Huésped</option>
+                                <option value="2">2 Huéspedes</option>
+                                <option value="3">3 Huéspedes</option>
+                                <option value="4">4+ Huéspedes</option>
+                            </select>
+                        </div>
+                        <button class="btn-search" id="search-btn">Buscar Disponibilidad</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Rooms Section -->
+        <section class="rooms-section" id="habitaciones">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Nuestras Habitaciones</h2>
+                    <p class="section-subtitle">Elegancia y confort en cada detalle</p>
+                </div>
+
+                <!-- Grid dinámico generado desde JS -->
+                <div class="rooms-grid" id="dynamic-rooms-grid">
+                    <!-- Las habitaciones se inyectan acá -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Amenities Section -->
+        <section class="amenities-section" id="servicios">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Servicios Exclusivos</h2>
+                    <p class="section-subtitle">Todo lo que necesitas para una estadía perfecta</p>
+                </div>
+
+                <div class="amenities-grid">
+                    <div class="amenity-card">
+                        <div class="amenity-icon">🏊</div>
+                        <h3 class="amenity-title">Piscina Infinity</h3>
+                        <p class="amenity-description">Piscina climatizada con vista panorámica disponible 24/7</p>
+                    </div>
+
+                    <div class="amenity-card">
+                        <div class="amenity-icon">🍽️</div>
+                        <h3 class="amenity-title">Restaurante Gourmet</h3>
+                        <p class="amenity-description">Cocina internacional de primer nivel con chef ejecutivo</p>
+                    </div>
+
+                    <div class="amenity-card">
+                        <div class="amenity-icon">💆</div>
+                        <h3 class="amenity-title">Spa & Wellness</h3>
+                        <p class="amenity-description">Tratamientos de relajación y terapias holísticas</p>
+                    </div>
+
+                    <div class="amenity-card">
+                        <div class="amenity-icon">🏋️</div>
+                        <h3 class="amenity-title">Gimnasio Premium</h3>
+                        <p class="amenity-description">Equipamiento de última generación y entrenadores personales</p>
+                    </div>
+
+                    <div class="amenity-card">
+                        <div class="amenity-icon">🚗</div>
+                        <h3 class="amenity-title">Valet Parking</h3>
+                        <p class="amenity-description">Servicio de estacionamiento y transporte al aeropuerto</p>
+                    </div>
+
+                    <div class="amenity-card">
+                        <div class="amenity-icon">📶</div>
+                        <h3 class="amenity-title">WiFi de Alta Velocidad</h3>
+                        <p class="amenity-description">Conexión gratuita en todas las áreas del hotel</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Offers Section -->
+        <section class="offers-section" id="ofertas">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Ofertas Especiales</h2>
+                    <p class="section-subtitle">Aprovecha nuestras promociones exclusivas</p>
+                </div>
+
+                <!-- Grid dinámico generado desde JS -->
+                <div class="offers-grid" id="dynamic-offers-grid">
+                    <!-- Las ofertas se inyectan acá -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer" id="contacto">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h3 class="footer-title">Hotel Elegance</h3>
+                        <p class="footer-description">
+                            Ofreciendo experiencias de lujo incomparables desde 1995.
+                            Tu comodidad es nuestra prioridad.
+                        </p>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Contacto</h4>
+                        <ul class="footer-links">
+                            <li>📍 Av. Principal 123, Ciudad</li>
+                            <li>📞 +1 (555) 123-4567</li>
+                            <li>✉️ info@hotelelegance.com</li>
+                            <li>🕐 Atención 24/7</li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Enlaces Rápidos</h4>
+                        <ul class="footer-links">
+                            <li><a href="#habitaciones">Habitaciones</a></li>
+                            <li><a href="#servicios">Servicios</a></li>
+                            <li><a href="#ofertas">Ofertas</a></li>
+                            <li><a href="#">Política de Privacidad</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Síguenos</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                            <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Hotel Elegance. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ===== MODAL: RESERVAR HABITACIÓN ===== -->
+    <div id="reservation-modal" class="modal-overlay" role="dialog" aria-modal="true"
+        aria-labelledby="modal-room-title">
+        <div class="modal-box">
+            <button class="modal-close" id="close-reservation-modal" aria-label="Cerrar">✕</button>
+            <div class="modal-header">
+                <span class="modal-icon">🛏️</span>
+                <h2 class="modal-title" id="modal-room-title">Reservar Habitación</h2>
+                <p class="modal-subtitle" id="modal-room-subtitle">Completa los datos para tu reserva</p>
+            </div>
+            <form id="reservation-form" class="modal-form" novalidate>
+                <div class="modal-room-info" id="modal-room-info">
+                    <!-- Se llena dinámicamente -->
+                </div>
+                <div class="modal-grid">
+                    <div class="form-group">
+                        <label for="res-checkin">Fecha de Entrada</label>
+                        <input type="date" id="res-checkin" required>
+                        <span class="input-icon">📅</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="res-checkout">Fecha de Salida</label>
+                        <input type="date" id="res-checkout" required>
+                        <span class="input-icon">📅</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="res-guests">Número de Huéspedes</label>
+                    <select id="res-guests" required>
+                        <option value="1">1 Huésped</option>
+                        <option value="2" selected>2 Huéspedes</option>
+                        <option value="3">3 Huéspedes</option>
+                        <option value="4">4 Huéspedes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="res-name">Nombre del Titular</label>
+                    <input type="text" id="res-name" placeholder="Nombre completo" required>
+                    <span class="input-icon">👤</span>
+                </div>
+                <div class="form-group">
+                    <label for="res-email">Correo Electrónico</label>
+                    <input type="email" id="res-email" placeholder="tu@email.com" required>
+                    <span class="input-icon">✉️</span>
+                </div>
+                <div class="form-group">
+                    <label for="res-special">Solicitudes Especiales (opcional)</label>
+                    <textarea id="res-special" placeholder="Ej: cama extra, piso alto, llegada tarde..."></textarea>
+                </div>
+                <div class="price-summary" id="price-summary">
+                    <div class="price-row">
+                        <span id="price-breakdown">Selecciona las fechas para ver el precio</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary" id="confirm-reservation-btn">
+                    Confirmar Reserva
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== MODAL: DETALLES DE OFERTA ===== -->
+    <div id="offer-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="offer-modal-title">
+        <div class="modal-box">
+            <button class="modal-close" id="close-offer-modal" aria-label="Cerrar">✕</button>
+            <div class="modal-header">
+                <span class="modal-icon" id="offer-modal-icon">🎁</span>
+                <h2 class="modal-title" id="offer-modal-title">Oferta Especial</h2>
+                <div class="offer-modal-badge" id="offer-modal-badge"></div>
+            </div>
+            <div id="offer-modal-body" class="offer-modal-body">
+                <!-- Se llena dinámicamente -->
+            </div>
+            <button class="btn-primary" id="book-offer-btn">Reservar Esta Oferta</button>
+        </div>
+    </div>
+
+    <!-- ===== MODAL: MIS RESERVAS ===== -->
+    <div id="my-reservations-modal" class="modal-overlay" role="dialog" aria-modal="true"
+        aria-labelledby="my-res-title">
+        <div class="modal-box modal-box--wide">
+            <button class="modal-close" id="close-my-reservations" aria-label="Cerrar">✕</button>
+            <div class="modal-header">
+                <span class="modal-icon">🗓️</span>
+                <h2 class="modal-title" id="my-res-title">Mis Reservas</h2>
+                <p class="modal-subtitle">Historial de todas tus reservaciones</p>
+            </div>
+            <div id="reservations-list" class="reservations-list">
+                <!-- Se llena dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MODAL: CONFIRMACIÓN ===== -->
+    <div id="confirmation-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-box">
+            <div class="confirmation-content">
+                <div class="confirmation-icon">🎉</div>
+                <h2 class="confirmation-title">¡Reserva Confirmada!</h2>
+                <p class="confirmation-subtitle">Tu reserva ha sido registrada exitosamente</p>
+                <div id="confirmation-details" class="confirmation-details">
+                    <!-- Se llena dinámicamente -->
+                </div>
+                <p class="confirmation-note">📧 Recibirás un email de confirmación en breve.</p>
+                <div class="confirmation-actions">
+                    <button class="btn-primary" id="view-reservations-btn">Ver Mis Reservas</button>
+                    <button class="btn-secondary" id="close-confirmation-btn">Volver al Inicio</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MODAL: PANEL DE ADMINISTRACIÓN ===== -->
+    <div id="admin-panel-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="admin-panel-title">
+        <div class="modal-box modal-box--wide">
+            <button class="modal-close" id="close-admin-panel" aria-label="Cerrar">✕</button>
+            <div class="modal-header">
+                <span class="modal-icon">⚙️</span>
+                <h2 class="modal-title" id="admin-panel-title">Panel de Administración</h2>
+                <p class="modal-subtitle">Gestión completa del hotel</p>
+            </div>
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="rooms">🛏️ Habitaciones</button>
+                <button class="admin-tab" data-tab="reservations">📋 Reservaciones</button>
+                <button class="admin-tab" data-tab="users">👥 Usuarios</button>
+            </div>
+            <div class="admin-tab-content">
+                <div id="admin-tab-rooms" class="tab-pane active">
+                    <div class="admin-section-header">
+                        <h3>Gestión de Habitaciones</h3>
+                        <button class="btn-primary btn-sm" id="add-room-btn">+ Nueva Habitación</button>
+                    </div>
+                    <div id="admin-rooms-list" class="admin-list"></div>
+                </div>
+                <div id="admin-tab-reservations" class="tab-pane">
+                    <div class="admin-section-header">
+                        <h3>Todas las Reservaciones</h3>
+                    </div>
+                    <div id="admin-reservations-list" class="admin-list"></div>
+                </div>
+                <div id="admin-tab-users" class="tab-pane">
+                    <div class="admin-section-header">
+                        <h3>Usuarios Registrados</h3>
+                    </div>
+                    <div id="admin-users-list" class="admin-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MODAL: ADMIN ROOM FORM ===== -->
+    <div id="admin-room-form-modal" class="modal-overlay" role="dialog" aria-modal="true" style="z-index: 9999;">
+        <div class="modal-box">
+            <button class="modal-close" id="close-admin-room-form" aria-label="Cerrar">✕</button>
+            <div class="modal-header">
+                <h2 class="modal-title" id="admin-room-form-title">Nueva Habitación</h2>
+            </div>
+            <form id="admin-room-form" class="modal-form">
+                <div class="form-group" style="display:none;">
+                    <input type="text" id="admin-room-id">
+                </div>
+                <div class="form-group">
+                    <label>Título</label>
+                    <input type="text" id="admin-room-title" required>
+                </div>
+                <div class="form-group">
+                    <label>Precio</label>
+                    <input type="number" id="admin-room-price" required>
+                </div>
+                <div class="form-group">
+                    <label>Ícono (emoji)</label>
+                    <input type="text" id="admin-room-icon" value="🛏️">
+                </div>
+                <div class="form-group">
+                    <label>Etiqueta (Ej: Popular, Nueva, Oferta)</label>
+                    <input type="text" id="admin-room-badge">
+                </div>
+                <div class="form-group">
+                    <label>Características (separadas por coma)</label>
+                    <input type="text" id="admin-room-features" placeholder="King Size, 2 Personas, Vista Mar">
+                </div>
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea id="admin-room-description" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Guardar Habitación</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== MODAL: TÉRMINOS Y CONDICIONES ===== -->
+    <div id="terms-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+        <div class="modal-box modal-box--wide">
+            <button class="modal-close" id="close-terms-modal" aria-label="Cerrar">✕</button>
+            <div class="modal-header">
+                <span class="modal-icon">📜</span>
+                <h2 class="modal-title" id="terms-title">Términos y Condiciones</h2>
+            </div>
+            <div class="terms-content"
+                style="max-height: 50vh; overflow-y: auto; padding: 1rem 0; text-align: left; font-size: 0.95rem; line-height: 1.6; color: var(--text-color);">
+                <h3 style="margin-bottom:0.5rem;">1. Introducción</h3>
+                <p style="margin-bottom:1rem;">Bienvenido a Hotel Elegance. Al realizar una reserva y utilizar nuestros
+                    servicios, usted acepta estar sujeto a los siguientes términos y condiciones. Por favor, léalos
+                    detenidamente.</p>
+
+                <h3 style="margin-bottom:0.5rem;">2. Reservas y Pagos</h3>
+                <p style="margin-bottom:1rem;">Todas las reservas están sujetas a disponibilidad. Se requiere un
+                    depósito o tarjeta de crédito válida para garantizar la reserva. Las tarifas indicadas están sujetas
+                    a impuestos locales aplicables.</p>
+
+                <h3 style="margin-bottom:0.5rem;">3. Políticas de Cancelación</h3>
+                <p style="margin-bottom:1rem;">Las cancelaciones deben realizarse con al menos 48 horas de antelación a
+                    la fecha de llegada para evitar cargos por la primera noche. Las tarifas promocionales o "no
+                    reembolsables" no permiten cancelaciones ni modificaciones.</p>
+
+                <h3 style="margin-bottom:0.5rem;">4. Responsabilidad del Huésped</h3>
+                <p style="margin-bottom:1rem;">El huésped es responsable de cualquier daño causado a la habitación o las
+                    instalaciones del hotel durante su estancia. El hotel no se hace responsable por la pérdida de
+                    objetos de valor no depositados en la caja fuerte de recepción.</p>
+
+                <h3 style="margin-bottom:0.5rem;">5. Privacidad y Datos Personales</h3>
+                <p style="margin-bottom:1rem;">Recopilamos y mantenemos sus datos personales de acuerdo con nuestra
+                    Política de Privacidad, garantizando su confidencialidad y usándolos exclusivamente para la gestión
+                    de su reserva y servicios del hotel.</p>
+            </div>
+            <div style="margin-top: 1.5rem; text-align: center;">
+                <button class="btn-primary" id="accept-terms-btn-modal">He leído y acepto</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MODAL: EDITAR RESERVA ===== -->
+    <div id="edit-reservation-modal" class="modal-overlay" role="dialog" aria-modal="true" style="z-index: 9999;">
+        <div class="modal-box">
+            <button class="modal-close" id="close-edit-reservation" aria-label="Cerrar">✕</button>
+            <div class="modal-header">
+                <span class="modal-icon">✏️</span>
+                <h2 class="modal-title">Editar Reserva</h2>
+                <p class="modal-subtitle">Modifica los detalles de tu reservación</p>
+            </div>
+            <form id="edit-res-form" class="modal-form" novalidate>
+                <input type="hidden" id="edit-res-id">
+                <input type="hidden" id="edit-res-room-price">
+                <div class="modal-grid">
+                    <div class="form-group">
+                        <label for="edit-res-checkin">Fecha de Entrada</label>
+                        <input type="date" id="edit-res-checkin" required>
+                        <span class="input-icon">📅</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-res-checkout">Fecha de Salida</label>
+                        <input type="date" id="edit-res-checkout" required>
+                        <span class="input-icon">📅</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="edit-res-guests">Número de Huéspedes</label>
+                    <select id="edit-res-guests" required>
+                        <option value="1">1 Huésped</option>
+                        <option value="2">2 Huéspedes</option>
+                        <option value="3">3 Huéspedes</option>
+                        <option value="4">4 Huéspedes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit-res-special">Solicitudes Especiales</label>
+                    <textarea id="edit-res-special" placeholder="Ej: cama extra, piso alto, llegada tarde..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
